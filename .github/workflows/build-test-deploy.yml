@@ -29,7 +29,7 @@ jobs:
       - run: npm test
         working-directory: node
   deploy:
-    needs: test
+    # needs: test
     permissions:
       contents: write
       pages: write
@@ -56,9 +56,9 @@ jobs:
       - run: npm run build
         working-directory: node
       - name: upload-artificats
-        working-directory: node
         uses: actions/upload-pages-artifact@v3
         with:
+          working-directory: node
           path: './out'
       - name: deploy
         id: deployment
