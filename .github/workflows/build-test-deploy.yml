@@ -59,7 +59,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           working-directory: node
-          path: './out'
+          path: './styles'
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
