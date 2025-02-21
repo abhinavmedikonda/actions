@@ -55,11 +55,12 @@ jobs:
         working-directory: node
       - run: npm run build
         working-directory: node
+      - run: mkdir -p node/out
       - name: upload-artificats
         uses: actions/upload-pages-artifact@v3
         with:
           working-directory: node
-          path: './node/out'
+          path: 'node/out'
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
