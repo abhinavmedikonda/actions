@@ -9,13 +9,13 @@ jobs:
           echo "actor - ${{ github.actor }}
           event - ${{ github.event_name }}
           os - ${{ runner.os }}
-          branch - ${{ github.ref }}, repository - ${{ github.repository }}"
+          branch - ${{ github.ref }}
+          repository - ${{ github.repository }}"
       - name: check-out-repository-code
         uses: actions/checkout@v4
       - run: echo "repository has been cloned to the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+      - name: List-files-in-root-directory
+        run: ls ${{ github.workspace }}
       - name: echo-file
         run: echo "$(cat node/hello_world.txt)"
       - run: echo "status - ${{ job.status }}."
