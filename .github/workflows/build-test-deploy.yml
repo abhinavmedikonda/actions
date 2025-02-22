@@ -59,7 +59,7 @@ jobs:
       - name: upload-artificats
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./node/out
+          path: node/out
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
