@@ -1,10 +1,11 @@
 name: hello-world
-run-name: ${{ github.actor }}
+# run-name: ${{ github.actor }}
 on: [push]
 jobs:
   hello-world-job:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "actor - ${{ github.actor }}"
       - run: echo "event - ${{ github.event_name }}"
       - run: echo "os - ${{ runner.os }}"
       - run: echo "branch - ${{ github.ref }}, repository - ${{ github.repository }}"
