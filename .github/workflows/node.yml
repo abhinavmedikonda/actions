@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - ".github/workflows/node.yml"
-      - "node/*"
+      - "node/**"
 jobs:
   build:
     runs-on: ubuntu-latest
