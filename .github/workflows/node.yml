@@ -2,7 +2,7 @@ name: build-test-deploy
 on:
   push:
     paths:
-      - ".github/workflows/build-test-deploy.yml"
+      - ".github/workflows/node.yml"
       - "node/*"
 jobs:
   build:
