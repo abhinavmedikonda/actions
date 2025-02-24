@@ -21,11 +21,11 @@ jobs:
           go-version-file: ./go/go.mod
           cache-dependency-path: ./go/go.sum
       - run: go mod download
-        working-directory: upper
+        working-directory: go
       - run: |
           ls
           go build
           ls
           go test
-        working-directory: upper
+        working-directory: go
         name: build and test
