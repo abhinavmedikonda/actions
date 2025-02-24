@@ -1,4 +1,4 @@
-name: gh
+name: github
 
 on:
   push:
