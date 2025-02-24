@@ -1,5 +1,9 @@
 name: build-test-deploy
-on: push
+on:
+  push:
+    paths:
+      - ".github/workflows/build-test-deploy.yml"
+      - "node/*"
 jobs:
   build:
     runs-on: ubuntu-latest
