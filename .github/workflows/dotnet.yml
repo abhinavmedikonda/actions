@@ -1,4 +1,4 @@
-name: api-build
+name: dotnet
 
 on:
   push:
