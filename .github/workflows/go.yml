@@ -28,4 +28,4 @@ jobs:
           ls
           go test
         working-directory: go
-        name: build and test
+        name: build-and-test
