@@ -6,11 +6,11 @@ on:
       - ".github/workflows/hello-world.yml"
   workflow_dispatch: # manual
 jobs:
-  log:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo 'comment ${{ github.event.comment.body }}'
-      - run: echo '${{ toJson(github.event) }}'
+  # log:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo 'comment ${{ github.event.comment.body }}'
+  #     - run: echo '${{ toJson(github.event) }}'
   hello-world:
     runs-on: ubuntu-latest
     steps:
