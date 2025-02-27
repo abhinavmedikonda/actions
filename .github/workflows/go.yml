@@ -21,7 +21,8 @@ jobs:
       # - run: go version
       - uses: actions/setup-go@v5
         with:
-          go-version: 1.22
+          # go-version: '1.22'
+          go-version-file: ./go/go.mod
           cache-dependency-path: ./go/go.sum
       # - run: go mod download
       #   working-directory: go
@@ -29,7 +30,7 @@ jobs:
           ls
           go build
           ls
-          go test -v
+          go test
         working-directory: go
         name: build-and-test
       - uses: actions/upload-artifact@v4
