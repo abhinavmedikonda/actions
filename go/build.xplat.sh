@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+# grouping logs
 echo "::group::Testing..."
 go test -v
 echo "::endgroup::"
@@ -21,6 +22,7 @@ do
         output_name+='.exe'
     fi
 
+    # grouping logs
     echo "::group::Building $output_name..."
     go clean # remove prior build (triggers more logging too)
     env GOOS=$GOOS GOARCH=$GOARCH go build -x -o $output_name .
@@ -28,6 +30,7 @@ do
 
 done
 
+# grouping logs
 echo "::group::tree..."
 tree
 echo "::endgroup::"
