@@ -26,11 +26,13 @@ jobs:
           cache-dependency-path: ./go/go.sum
       # - run: go mod download
       #   working-directory: go
-      - run: |
-          ls
-          go build
-          ls
-          go test
+      - run: ls
+        working-directory: go
+      - run: go build
+        working-directory: go
+      - run: ls
+        working-directory: go
+      - run: go test -v
         working-directory: go
         name: build-and-test
       - uses: actions/upload-artifact@v4
