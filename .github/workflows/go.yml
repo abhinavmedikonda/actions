@@ -29,7 +29,7 @@ jobs:
           ls
           go build
           ls
-          go test
+          go test -v
         working-directory: go
         name: build-and-test
       - uses: actions/upload-artifact@v4
