@@ -23,8 +23,8 @@ jobs:
         with:
           go-version: 1.22
           cache-dependency-path: ./go/go.sum
-      - run: go mod download
-        working-directory: go
+      # - run: go mod download
+      #   working-directory: go
       - run: |
           ls
           go build
