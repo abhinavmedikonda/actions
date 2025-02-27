@@ -15,7 +15,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: go
     steps:
       - run: pwd && ls -al
       - uses: actions/checkout@v4
@@ -29,9 +28,13 @@ jobs:
       - run: go mod download
         working-directory: go
       - run: ls
+        working-directory: go
       - run: go build
+        working-directory: go
       - run: ls
+        working-directory: go
       - run: go test -v
+        working-directory: go
         name: build-and-test
       - uses: actions/upload-artifact@v4
         with:
