@@ -1,19 +1,19 @@
 name: go
-
 on:
   push:
     paths:
       - ".github/workflows/go.yml"
       - "go/**"
   workflow_dispatch: # manual
-
 jobs:
   build:
     strategy:
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
     runs-on: ${{ matrix.os }}
-    # runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
     steps:
       # - run: pwd && ls -al
       - uses: actions/checkout@v4
@@ -25,16 +25,10 @@ jobs:
           go-version-file: ./go/go.mod
           cache-dependency-path: ./go/go.sum
       - run: go mod download
-        working-directory: go
       - run: ls
-        working-directory: go
       - run: go build
-        working-directory: go
       - run: ls
-        working-directory: go
       - run: go test -v
-        working-directory: go
-        name: build-and-test
       - uses: actions/upload-artifact@v4
         with:
           path: ./go/upper*
