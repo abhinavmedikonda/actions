@@ -37,5 +37,5 @@ jobs:
         name: build-and-test
       - uses: actions/upload-artifact@v4
         with:
-          path: ./go/upper
+          path: ./go/upper*
           name: "build-${{ matrix.os }}"
