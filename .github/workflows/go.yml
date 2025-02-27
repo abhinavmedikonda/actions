@@ -34,8 +34,8 @@ jobs:
         working-directory: go
       - run: go test -v
         working-directory: go
-      #   name: build-and-test
-      # - uses: actions/upload-artifact@v4
-      #   with:
-      #     path: ./go/go
-      #     name: "build" #-${{ matrix.os }}"
+        name: build-and-test
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./go/go
+          name: "build" #-${{ matrix.os }}"
