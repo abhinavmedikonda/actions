@@ -5,6 +5,11 @@ on:
       - ".github/workflows/go-cross.yml"
   workflow_dispatch: # manual
 jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'comment ${{ github.event.comment.body }}'
+      - run: echo '${{ toJson(github.event) }}'
   cross:
     permissions:
       contents: write
