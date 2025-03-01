@@ -1,1 +1,1 @@
-Hello! And congrats, you've succesfully built and run your first GitHub Actions workflow file!
+[![go-cross](https://github.com/abhinavmedikonda/actions/actions/workflows/go-cross.yml/badge.svg)](https://github.com/abhinavmedikonda/actions/actions/workflows/go-cross.yml)
