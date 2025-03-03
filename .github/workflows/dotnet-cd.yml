@@ -23,6 +23,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: ./build-push.sh # can reuse local build scripts for CI/CD
         working-directory: dotnet
+  deploy:
+    needs: build
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
   # deploy:
   #   runs-on: ubuntu-latest
   #   environment:
