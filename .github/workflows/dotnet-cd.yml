@@ -25,25 +25,17 @@ jobs:
         working-directory: dotnet
   deploy:
     needs: build
-    environment: production
+    environment: 
+      name: production
+      url: ${{ steps.deploy.outputs.webapp-url }}
     runs-on: ubuntu-latest
     steps:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   environment:
-  #     name: production
-  #     url: ${{ steps.deploy.outputs.webapp-url }}
-  #   needs: build
-  #   steps:
-  #     - uses: azure/login@v2
-  #       with:
-  #         creds: ${{ secrets.AZURE_CREDENTIALS }}
-  #     - uses: azure/webapps-deploy@v3
-  #       id: deploy
-  #       with:
-  #         app-name: gh-actions-web-api
-  #         images: weshigbee/actions-web:latest
-  #         resource-group-name: gh-actions
+      - uses: azure/webapps-deploy@v3
+        id: deploy
+        with:
+          app-name: gh-actions-web-api
+          images: abhinavmedikonda/actions:latest
+          resource-group-name: gh-actions
