@@ -27,7 +27,7 @@ jobs:
     needs: build
     environment: 
       name: production
-      url: ${{ steps.deploy.outputs.webapp-url }}
+      url: ${{ steps.deploy.outputs.webapp-url }} # display url in github environment page
     runs-on: ubuntu-latest
     steps:
       - uses: azure/login@v2
